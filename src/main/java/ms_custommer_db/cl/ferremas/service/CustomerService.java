@@ -1,0 +1,40 @@
+package ms_custommer_db.cl.ferremas.service;
+
+import ms_custommer_db.cl.ferremas.model.entities.Customer;
+import ms_custommer_db.cl.ferremas.model.repository.CustomerRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class CustomerService {
+
+    @Autowired
+    CustomerRepository customerRepository;
+
+    public List<Customer> selectAllCustomers() {
+        List<Customer>  listaCustomers = customerRepository.findAll();
+        return listaCustomers;
+    }
+
+    public Customer selectIdCustomer(Long id){
+        Customer customer = customerRepository.getReferenceById(id);
+        return customer;
+    }
+
+    public Customer addCustomer(
+            String username, String password, String name, String lastname, String email
+    ){
+        Customer customer = new Customer();
+        customer.setUsername(username);
+        customer.setPassword(password);
+        customer.setName(name);
+        customer.setLastName(lastname);
+        customer.setEmail(email);
+
+        return customer;
+    }
+
+
+}

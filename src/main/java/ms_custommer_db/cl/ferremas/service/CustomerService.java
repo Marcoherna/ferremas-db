@@ -33,6 +33,8 @@ public class CustomerService {
         customer.setLastName(lastname);
         customer.setEmail(email);
 
+        customerRepository.save(customer);
+
         return customer;
     }
 

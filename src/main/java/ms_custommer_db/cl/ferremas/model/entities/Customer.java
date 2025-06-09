@@ -1,12 +1,12 @@
 package ms_custommer_db.cl.ferremas.model.entities;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @Entity
 @Table(name = "customer")
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @ToString

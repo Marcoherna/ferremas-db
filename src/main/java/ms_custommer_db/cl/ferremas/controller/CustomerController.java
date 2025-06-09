@@ -40,7 +40,7 @@ public class CustomerController {
     @PostMapping
     public ResponseEntity<String> addCustomer(@RequestBody DatosCustomer datosCustomer){
         customerService.addCustomer(datosCustomer);
-        String response = "Customer: " + datosCustomer.username() +" added";
+        String response = "Customer: " + datosCustomer.userName() +" added";
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 }
